@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.waylau.lite.spring.boot.starter.mapper.UserMapper">
+
+	<insert id="createUser"
+		parameterType="com.waylau.lite.spring.boot.starter.domain.User">
+		insert into t_user (username, password, email)
+		values( #{username}, #{password}, #{email})
+	</insert>
+
+	<delete id="deleteUser" parameterType="long">
+		delete from t_user
+		where user_id = #{userId}
+	</delete>
+
+	<update id="updateUser"
+		parameterType="com.waylau.lite.spring.boot.starter.domain.User">
+		update t_user set
+		password = #{password},
+		email = #{email}
+		where user_id = #{userId}
+	</update>
+
+	<select id="getUser" parameterType="long"
+		resultType="com.waylau.lite.spring.boot.starter.domain.User">
+		select user_id as userId, username, password, email
+		from t_user where user_id = #{userId}
+	</select>
+
+	<select id="getUserByUsername" parameterType="string"
+		resultType="com.waylau.lite.spring.boot.starter.domain.User">
+		select user_id as userId, username, password, email
+		from t_user where username = #{username}
+	</select>
+</mapper>

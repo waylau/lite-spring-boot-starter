@@ -24,14 +24,13 @@ public class LiteSecurityConfig
 	/**
 	 * 自定义配置
 	 */
-	/*
 	@Override
 	protected void configure(HttpSecurity http) throws Exception { 
 		
 		// 允许所有人访问
 		http.authorizeRequests().anyRequest().anonymous();
 	}
-	*/
+	/*
 	@Override
 	protected void configure(HttpSecurity http) throws Exception { 
 		http.authorizeRequests().anyRequest().authenticated() //所有请求都需认证
@@ -56,4 +55,5 @@ public class LiteSecurityConfig
 				);
 		return manager;
 	}
+	*/
 }
